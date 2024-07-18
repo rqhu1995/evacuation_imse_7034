@@ -119,7 +119,7 @@ mdl.addConstrs(
     for i in demand_node for m in demand_type
 )
 
-# 一个loop从base开始
+# a loop starts from base
 mdl.addConstrs(
     gp.quicksum(
         x[base[k], j, k, m, n]
@@ -140,7 +140,7 @@ mdl.addConstrs(
     for n in range(1, max_cycle[k][m - 1] + 1)
 )
 
-# 一个base结束
+# end of a base
 mdl.addConstrs(
     gp.quicksum(
         x[j, base[k], k, m, n]
@@ -255,7 +255,7 @@ mdl.addConstrs(
 )
 
 # time constraints
-# 一个loop不能超过飞机最长飞行时间
+# one loop cannot exceed the flying time limit
 mdl.addConstrs(
     gp.quicksum(
         x[i, j, k, m, n] * dist_matrix[i - 1][j - 1] / speed[k]
