@@ -16,3 +16,5 @@ To run the code, use command
 
 # Output
 The output gives the scheduled route calculated by gurobi.
+
+> For detailed ideas and model formulation, please refer to the report. 
